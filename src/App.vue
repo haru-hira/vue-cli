@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
+    <LikeNumber :total-number="number" @my-click="incrementNumber" @my-click2="incrementNumber2"></LikeNumber>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -22,8 +22,14 @@ export default {
     LikeNumber
   },
   methods: {
-    incrementNumber(value) {
-      this.number = value;
+    incrementNumber(num, value1, value2, value3) {
+      console.log(value1);
+      console.log(value2);
+      console.log(value3);
+      this.number = num;
+    },
+    incrementNumber2(value) {
+      console.log(value);
     }
   }
 }

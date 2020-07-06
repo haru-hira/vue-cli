@@ -10,12 +10,20 @@ export default {
   props: [ "totalNumber" ],
   computed: {
     halfNumber() {
-      return this.totalNumber / 2;
+      return this.totalNumber;
     }
   },
   methods: {
     increment() {
-      this.$emit("my-click", this.totalNumber + 1);
+      const hoge = 1;
+      const piyo = 2;
+      const fuga = 3;
+      this.$emit("my-click", this.totalNumber + 1, hoge, piyo, fuga);
+      this.$emit("my-click2", {
+        hoge: hoge,
+        piyo: piyo,
+        fuga: fuga
+      });
     }
   }
 };
